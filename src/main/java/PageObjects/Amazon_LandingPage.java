@@ -12,14 +12,13 @@ public class Amazon_LandingPage {
 	public Amazon_LandingPage(WebDriver driver) {
 		this.Driver = driver;
 		
-		PageFactory.initElements(driver, this);  // this means initialize the objects in this class 	
+		PageFactory.initElements(driver, this);  	
 	}
 	
-	@FindBy(css = "#nav-link-accountList-nav-line-1")     // sign in button 
+	@FindBy(css = "#nav-link-accountList-nav-line-1")      
 	WebElement myAccountDropdown;
 	
 	public WebElement myAccountDropdown() {
 		return myAccountDropdown;
 	}
-
 }
