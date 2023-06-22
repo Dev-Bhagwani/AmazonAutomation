@@ -10,7 +10,6 @@ public class Amazon_SearchPage {
 	WebDriver Driver;
 
 	public Amazon_SearchPage(WebDriver driver) {
-
 		this.Driver = driver;
 
 		PageFactory.initElements(driver, this);
@@ -29,5 +28,4 @@ public class Amazon_SearchPage {
 	public WebElement searchButton() {
 		return searchButton;
 	}
-
 }
