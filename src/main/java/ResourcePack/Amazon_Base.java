@@ -3,7 +3,6 @@ package ResourcePack;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 
@@ -21,8 +20,8 @@ public class Amazon_Base {
 
 	public WebDriver initializeBrowser() throws IOException {
 
-		prop = new Properties(); // imported java properties
-		String propertiesPath = System.getProperty("user.dir") + "\\src\\main\\java\\ResourcePack\\amazon.properties"; // Location of amazon.properties
+		prop = new Properties(); 
+		String propertiesPath = System.getProperty("user.dir") + "\\src\\main\\java\\ResourcePack\\amazon.properties"; 
 		FileInputStream fis = new FileInputStream(propertiesPath);
 		prop.load(fis);
 
@@ -46,28 +45,4 @@ public class Amazon_Base {
 
 		return driver;
 	}
-
-	// Window Handel
-
-	public void windowHandle() throws InterruptedException {
-		Thread.sleep(2000);
-		String mainwindow = driver.getWindowHandle();
-		Set<String> allWindowHandle = driver.getWindowHandles();
-		System.out.print(allWindowHandle);
-		Iterator<String> i1 = allWindowHandle.iterator();
-
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-			if (!mainwindow.equalsIgnoreCase(ChildWindow)) {
-
-				driver.switchTo().window(ChildWindow);
-				System.out.println(driver.getTitle());
-				driver.close();
-				Thread.sleep(1000);
-			}
-
-		}
-		driver.switchTo().window(mainwindow);
-	}
-	
 }
