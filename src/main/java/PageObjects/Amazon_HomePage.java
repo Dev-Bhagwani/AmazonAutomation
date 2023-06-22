@@ -14,8 +14,6 @@ public class Amazon_HomePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	// To check that i have logged in correctly
-	
 	@FindBy(css = "#nav-global-location-popover-link")
 	WebElement accountPage;
 	
