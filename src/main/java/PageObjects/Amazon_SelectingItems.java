@@ -18,10 +18,7 @@ public class Amazon_SelectingItems {
 	}
 
 	@FindBy(xpath = "(//span[contains(@class,'a-size-medium a-color-base')])[1]")
-	WebElement OnePlus;
-	
-	@FindBy(xpath ="//input[@id='add-to-cart-button']")
-	WebElement addToCart;	  
+	WebElement OnePlus;  
 	
 	@FindBy(xpath = "//div[@id='buyBackAccordionRow']")
 	WebElement withExchangePanel;
@@ -30,19 +27,7 @@ public class Amazon_SelectingItems {
 		return OnePlus;
 	}
 	
-	public void addToCart() {
-		  addToCart.click();	  
-	}
-	
 	public WebElement withExchangePanel() {
 		return withExchangePanel;
-	}
-	
-	//Scroll Web (Scrolling by using Pixel)
-	public void ScrollToWeb()  {
-		JavascriptExecutor js = (JavascriptExecutor)Driver;
-		js.executeScript("window.scrollBy(0,1000);", "");
-		WebElement cart = Driver.findElement(By.xpath("//input[@id='add-to-cart-button']"));
-		cart.click();		
 	}
 }
